@@ -1,0 +1,29 @@
+﻿<Page x:Class="ReversiGame.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ReversiGame"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GamePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Visibility="{Binding Visibility}" Grid.ColumnSpan="2" Margin="666,0,0,63.6" Grid.RowSpan="2">
+            <Label Content="Текущий игрок:"   HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" />
+            <Label Content="" HorizontalAlignment="Left" Margin="10,0,0,0"  VerticalAlignment="Top"/>
+            <Ellipse Fill="White"  HorizontalAlignment="Left" Height="22" Margin="50,0,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="22"/>
+            <Label Content="Счёт:" HorizontalAlignment="Left" Margin="10,10,0,0"  VerticalAlignment="Top"/>
+            <Label Content="" HorizontalAlignment="Left" Margin="60,-18,0,0"  VerticalAlignment="Top" Width="46"/>
+        </StackPanel>
+        <Button Content="Закончить игру" FontSize="20" Margin="141,9,141,9" Grid.Row="1" Command="{Binding EndGame}"/>
+        <Canvas x:Name="GameArea" ClipToBounds="True" HorizontalAlignment="Left" Height="386" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Width="666"/>
+    </Grid>
+</Page>

@@ -1,0 +1,24 @@
+﻿<Page x:Class="ReversiGame.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ReversiGame"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid>
+        <GroupBox Grid.Column="0" Header="Количество игроков" FontSize="20"  HorizontalAlignment="Left" Height="133" Margin="11,128,0,0" VerticalAlignment="Top" Width="283" >
+            <StackPanel Margin="2,0,-2.2,-0.4">
+                <RadioButton Content="Один игрок" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.5,0.5" IsChecked="True" />
+                <RadioButton Content="Два игрока" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.5,0.5" />
+            </StackPanel>
+        </GroupBox>
+        <Button Content="ИГРАТЬ" FontSize="30" FontWeight="Bold" Margin="0,0,10,9.6" Height="103" VerticalAlignment="Bottom" Command="{Binding StartGame}" CommandParameter="{Binding ElementName=FieldSize, Path=Text}" HorizontalAlignment="Right" Width="212" />
+        <Label Content="РЕВЕРСИ" FontSize="40" Foreground="Red" FontWeight="Bold" Margin="578,54,24,0" VerticalAlignment="Top" Height="105"/>
+        <TextBox x:Name="FieldSize" Text="{Binding FieldSize}" HorizontalAlignment="Left" Height="33" Margin="25,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Размер поля" FontSize="20" HorizontalAlignment="Left" Margin="25,28,0,0" VerticalAlignment="Top" Width="130"/>
+
+    </Grid>
+</Page>
